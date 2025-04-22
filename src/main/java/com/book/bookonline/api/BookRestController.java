@@ -30,8 +30,8 @@ public class BookRestController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<BookResponse>> listBooks(@RequestParam(name ="size" , value = "5") int size,
-                                                        @RequestParam(name = "page" , value = "1") int page){
+    public ResponseEntity<List<BookResponse>> listBooks(@RequestParam(value = "5") int size,
+                                                        @RequestParam(value = "1") int page){
         return ResponseEntity.
                 ok(bookListService.listBooks(page,size));
     }
